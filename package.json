@@ -1,12 +1,13 @@
 {
   "name": "nidhis-webc-poc",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A simple web component",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
+  "type": "module",
   "scripts": {
-    "build": "tsc",
-    "build:watch": "tsc --watch",
+    "build": "npm run clean && npm run copy:assets && tsc",
+    "build:watch": "npm run clean && npm run copy:assets && tsc --watch",
     "clean": "rimraf dist",
     "lint": "npm run lint:lit-analyzer && npm run lint:eslint",
     "lint:eslint": "eslint 'src/**/*.ts'",
@@ -16,7 +17,8 @@
     "analyze:watch": "cem analyze --litelement --globs \"src/**/*.ts\" --watch",
     "serve": "wds --watch",
     "serve:prod": "MODE=prod npm run serve",
-    "checksize": "rollup -c ; cat my-element.bundled.js | gzip -9 | wc -c ; rm my-element.bundled.js"
+    "checksize": "rollup -c ; cat my-element.bundled.js | gzip -9 | wc -c ; rm my-element.bundled.js",
+    "copy:assets": "mkdir -p dist/assets && cp -r assets/ dist/assets/"
   },
   "keywords": [
     "web-components",

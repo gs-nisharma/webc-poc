@@ -1,1 +1,1 @@
-{"version":3,"file":"index.js","sourceRoot":"","sources":["../src/index.ts"],"names":[],"mappings":"AAAA,cAAc,aAAa,CAAA;AAC3B,cAAc,QAAQ,CAAA","sourcesContent":["export * from \"./MyElement\"\nexport * from \"./main\"\n"]}
+{"version":3,"file":"index.js","sourceRoot":"","sources":["../src/index.ts"],"names":[],"mappings":"AAAA,cAAc,aAAa,CAAC;AAC5B,cAAc,QAAQ,CAAC","sourcesContent":["export * from './MyElement';\nexport * from './main';\n"]}

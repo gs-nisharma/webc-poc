@@ -5,34 +5,45 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import { LitElement, html, css } from 'lit';
-import { customElement, } from 'lit/decorators.js';
+import { customElement } from 'lit/decorators.js';
 import { range } from 'lit/directives/range.js';
 import { map } from 'lit/directives/map.js';
 import { styleMap } from 'lit/directives/style-map.js';
 import styles from './styles';
-import "./Components/title-bar";
-import "./Components/filters-bar";
-import "./Components/engagement-card";
+import './components/Header';
+import './components/TitleBar';
+import './components/FiltersBar';
+import './components/EngagementCard';
 let PxJo = class PxJo extends LitElement {
     render() {
         return html `
+      <header-wc></header-wc>
+      <div class="container">
         <title-bar></title-bar>
         <filters-bar></filters-bar>
-        <div style=${styleMap({ display: "flex", flexWrap: "wrap" })}>${map(range(9), () => html `<engagement-card ></engagement-card>`)}</div>
+        <div style=${styleMap({ display: 'flex', flexWrap: 'wrap' })}>
+          ${map(range(9), () => html `<engagement-card></engagement-card>`)}
+        </div>
+      </div>
     `;
     }
 };
-PxJo.styles = [styles, css `
-     :host{
+PxJo.styles = [
+    styles,
+    css `
+      :host {
         display: block;
         margin: 0;
         padding: 0;
-      --rich-gray-0: #FFF;
-      --rich-gray-90-primary:  #181F26;
-      width: 75vw;
-      margin: auto;
-    }
-  `];
+        --rich-gray-0: #fff;
+        --rich-gray-90-primary: #181f26;
+      }
+      .container {
+        width: 75%;
+        margin: auto;
+      }
+    `,
+];
 PxJo = __decorate([
     customElement('px-jo')
 ], PxJo);

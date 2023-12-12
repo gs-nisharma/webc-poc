@@ -17,5 +17,10 @@
       <p>This is child content</p>
     </my-element> -->
     <px-jo></px-jo>
+    <script>
+      document.querySelector('px-jo').onClose = () => {
+        alert('closing...');
+      };
+    </script>
   </body>
 </html>

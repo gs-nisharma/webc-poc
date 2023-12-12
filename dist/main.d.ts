@@ -1,7 +1,8 @@
 import { LitElement } from 'lit';
-import "./Components/title-bar";
-import "./Components/filters-bar";
-import "./Components/engagement-card";
+import './components/Header';
+import './components/TitleBar';
+import './components/FiltersBar';
+import './components/EngagementCard';
 export declare class PxJo extends LitElement {
     static styles: import("lit").CSSResult[];
     render(): import("lit-html").TemplateResult<1>;
